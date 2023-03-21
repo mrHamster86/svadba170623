@@ -1,0 +1,29 @@
+@import "@/styles/veriabless.scss";
+
+.promo {
+    display: flex;
+    flex-direction: column;
+    height: 620px;
+
+    background-color: #000000;
+    background-image: url('/img/promo-flowers-right_mobile.png');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: auto 330px;
+
+    @media (min-width: $tablet) {
+        height: 785px;
+        
+        background-image: url('/img/promo-flowers-left_tablet.png'), url('/img/promo-flowers-right_tablet.png');
+        background-repeat: no-repeat;
+        background-position: left 352px, right bottom;
+        background-size: auto 320px, auto 454px;
+    }
+
+    @media (min-width: $desktop) {
+        background-image: url('/img/promo-flowers-left_descktop.png'), url('/img/promo-flowers-right_descktop.png');
+        background-repeat: no-repeat;
+        background-position: left 237px, right bottom;
+        background-size: auto 588px, auto 566px;
+    }
+}

@@ -1,0 +1,64 @@
+@import "@/styles/veriabless.scss";
+
+.conteiner {
+    margin-top: auto;
+
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+.wrapper {
+    @include wrapper;
+}
+
+.schedule {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 127px;
+
+    @media (min-width: $tablet) {
+        height: 215px;
+    }
+}
+
+.item {
+    padding: 0 10px;
+
+    font-size: 14px;
+    line-height: 18px;
+
+    h3 {
+        margin: 0;
+    }
+
+    address {
+        font-style: normal;
+    }
+
+    &+.item {
+        border-left: 1px solid #464646;
+    }
+
+    @media (min-width: $tablet) {
+        padding: 0 40px;
+
+        font-size: 25px;
+        line-height: 32px;
+
+        &+.item {
+            border-left: 2px solid #464646;
+        }
+    }
+
+    @media (min-width: $desktop) {
+        br {
+            display: none;
+        }
+    }
+}
+
+.zags {
+    text-align: right;
+}
+
+.banquet {}

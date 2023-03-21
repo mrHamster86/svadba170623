@@ -1,0 +1,63 @@
+@import "@/styles/veriabless.scss";
+
+.date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #ffffff;
+}
+
+.month,
+.year {
+    width: 85px;
+
+    text-align: center;
+    font-size: 25px;
+    line-height: 45px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    border-top: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+
+    @media (min-width: $tablet) {
+        width: 105px;
+
+        padding: 0;
+        font-size: 35px;
+    }
+}
+
+.day {
+    display: flex;
+    align-items: center;
+
+    font-family: $Times;
+    font-size: 80px;
+    line-height: 90px;
+    font-weight: bold;
+
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+        width: 10px;
+        height: 10px;
+
+        margin: 0 3px;
+
+        border-radius: 50%;
+        background-color: #ffffff;
+    }
+
+    @media (min-width: $tablet) {
+        font-size: 100px;
+        line-height: 110px;
+
+        &::before,
+        &::after {
+            margin: 0 10px;
+        }
+    }
+}
