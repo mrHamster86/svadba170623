@@ -1,0 +1,60 @@
+//font
+$PTSans: "PT Sans", "Arial", sans-serif;
+$Times: "Times New Roman", serif;
+
+//viewports
+$tablet: 768px;
+$desktop: 1220px;
+$mobile-only: 767px;
+
+//color
+$fonts-color-main: rgba(38, 37, 37, 1);
+$fonts-color-coment: rgba(184, 184, 184, 1);
+
+//padding
+$padding-mobile: 0 18px;
+$padding-tablet: 0 38px;
+$padding-desktop: 0 101px;
+
+//wrapper
+$wrapper-desktop: 1440px;
+
+//mixins
+@mixin wrapper {
+    padding: $padding-mobile;
+    max-width: $wrapper-desktop;
+
+    @media (min-width: $tablet) {
+        padding: $padding-tablet;
+    }
+
+    @media (min-width: $desktop) {
+        padding: $padding-desktop;
+    }
+}
+
+@mixin list-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin button-reset {
+    background-color: transparent;
+    border: none;
+}
+
+@mixin link-reset {
+    text-decoration: none;
+    color: #D47A7A;
+
+    &:hover,
+    &:active {
+        color: #000000;
+    }
+}
+
+@mixin button-reset {
+    background-color: transparent;
+    border: none;
+}

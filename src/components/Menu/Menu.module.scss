@@ -1,0 +1,117 @@
+@import "@/styles/veriabless.scss";
+
+.menu {
+    position: relative;
+
+    @media (min-width: $tablet) {
+        position: static;
+    }
+}
+
+.wrapper {
+    @include wrapper;
+    margin-top: 20px;
+
+    @media (min-width: $tablet) {
+        margin-top: 50px;
+    }
+}
+
+.conteiner {
+    padding: 13px 20px;
+
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+
+    @media (min-width: $tablet) {
+        padding: 20px 15px;
+    }
+
+    @media (min-width: $desktop) {
+        padding: 20px 105px;
+    }
+}
+
+.mobileMenu {
+    position: absolute;
+    top: 100%;
+    z-index: 100;
+
+    width: 100%;
+    height: calc(100vh - 68px);
+    box-sizing: border-box;
+
+    padding: 60px 30px;
+    background-color: #000000;
+
+    @media (min-width: $tablet) {
+        position: static;
+        height: auto;
+
+        background-color: transparent;
+        padding: 0;
+    }
+}
+
+.mobileMenu_on {
+    left: 0;
+    transition: left 0.3s ease-out;
+}
+
+.mobileMenu_off {
+    left: 100%;
+    transition: left 0.3s ease-in;
+}
+
+.list {
+    @include list-reset;
+
+    @media (min-width: $tablet) {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.link {
+    @include link-reset;
+    display: block;
+    margin-bottom: 43px;
+
+    color: #ffffff;
+
+    font-size: 18px;
+    line-height: 24px;
+
+    &:hover,
+    &:active {
+        color: #FFADAD;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @media (min-width: $tablet) {
+        margin-bottom: 0;
+    }
+}
+
+.button {
+    @include button-reset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 25px;
+    height: 20px;
+
+    margin-left: auto;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+
+    @media (min-width: $tablet) {
+        display: none;
+    }
+}

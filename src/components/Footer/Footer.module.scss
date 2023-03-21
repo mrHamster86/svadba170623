@@ -1,0 +1,23 @@
+@import "@/styles/veriabless.scss";
+
+.footer {
+    padding: 32px 0 22px 0;
+
+    background-color: #000000;
+    background-image: url('/img/footer-flowers__mob.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: auto 100%;
+
+    @media (min-width: $tablet) {
+        padding: 50px 0;
+
+        background-image: url('/img/footer-flowers__tab.png');
+    }
+
+    @media (min-width: $desktop) {
+        padding: 83px 0;
+
+        background-image: none;
+    }
+}
