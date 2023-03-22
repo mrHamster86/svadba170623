@@ -2,42 +2,43 @@
 @import "./veriabless.scss";
 
 html {
-    height: 100%;
-  }
-  
-  body {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
-    min-width: 320px;
-    font-family: $PTSans;
-    font-size: 18px;
-    font-weight: 400;
-    color: $fonts-color-main;
-    overflow-x: hidden;
-    max-width: 100%;
-  }
-  
-  .visually-hidden {
-    position: absolute;
-    clip: rect(1px, 1px, 1px, 1px);
-    padding: 0;
-    border: 0;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-  }
+  scroll-behavior: smooth;
+  height: 100%;
+}
 
-  #__next {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  min-width: 320px;
+  font-family: $PTSans;
+  font-size: 18px;
+  font-weight: 400;
+  color: $fonts-color-main;
+  overflow-x: hidden;
+  max-width: 100%;
+}
 
-    overflow: hidden;
-  }
+.visually-hidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
 
-  main {
-    flex-grow: 1;
-  }
+#__next {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  overflow: hidden;
+}
+
+main {
+  flex-grow: 1;
+}

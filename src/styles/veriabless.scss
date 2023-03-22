@@ -23,6 +23,8 @@ $wrapper-desktop: 1440px;
 @mixin wrapper {
     padding: $padding-mobile;
     max-width: $wrapper-desktop;
+    margin-left: auto;
+    margin-right: auto;
 
     @media (min-width: $tablet) {
         padding: $padding-tablet;
