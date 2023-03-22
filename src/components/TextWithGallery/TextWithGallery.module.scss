@@ -1,0 +1,111 @@
+@import "@/styles/veriabless.scss";
+
+.section {
+    @include wrapper;
+    padding-top: 40px;
+
+    font-size: 15px;
+    line-height: 19px;
+
+    & + & {
+        padding-bottom: 80px;
+    }
+
+    @media (min-width: $tablet) {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        padding-top: 60px;
+
+        font-size: 18px;
+        line-height: 23px;
+
+        & + & {
+            padding-bottom: 70px;
+        }
+    }
+
+    @media (min-width: $desktop) {
+        gap: 60px;
+        padding-top: 140px;
+
+        font-size: 25px;
+        line-height: 32px;
+
+        & + & {
+            padding-bottom: 140px;
+        }
+    }
+}
+
+.title {
+    margin: 0;
+
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 39px;
+    letter-spacing: 0.05em;
+
+    @media (min-width: $desktop) {
+        font-size: 45px;
+        line-height: 58px;
+    }
+}
+
+.text {
+    margin: 15px 0;
+
+    @media (min-width: $tablet) {
+        margin: 20px 0;
+    }
+
+    @media (min-width: $desktop) {
+        margin: 40px 0;
+    }
+}
+
+.link {
+    @include link-reset;
+}
+
+.comment {
+    margin: 15px 0 0;
+    color: #B8B8B8;
+
+    @media (min-width: $tablet) {
+        margin: 20px 0 0;
+    }
+
+    @media (min-width: $desktop) {
+        margin: 40px 0 0;
+    }
+}
+
+.gallery {
+    margin-top: 30px;
+
+    @media (min-width: $tablet) {
+        flex-shrink: 0;
+        margin-top: 0;
+
+        width: 335px;
+    }
+
+    @media (min-width: $desktop) {
+        width: 610px;
+    }
+}
+
+.imgWrapper {
+    & + & {
+        display: none;
+    }
+}
+
+.img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
