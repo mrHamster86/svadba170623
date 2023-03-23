@@ -1,4 +1,5 @@
 import { ControllerRenderProps } from 'react-hook-form';
+import { Icon } from '../Icon/Icon';
 
 import styles from './Checkbox.module.scss';
 
@@ -21,12 +22,16 @@ export const Checkbox = ({
             <input
                 id={id}
                 type="checkbox"
+                className="visually-hidden"
                 name={name}
                 ref={ref}
                 onChange={onChange}
                 onBlur={onBlur}
             />
-            <label htmlFor={id}>{label}</label>
+            <label htmlFor={id} className={styles.label}>
+                <Icon icon='checkbox' mix={styles.icon} />
+                {label}
+            </label>
         </div>
     );
 }
