@@ -1,1 +1,34 @@
-.textarea {}
+@import "@/styles/veriabless.scss";
+
+.textarea {
+    display: flex;
+    flex-direction: column;
+
+    textarea {
+        @include input;
+        resize: none;
+    }
+}
+
+* + .textarea {
+    margin-top: 20px;
+
+    @media (min-width: $desktop) {
+        margin-top: 30px;
+    }
+}
+
+.description {
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.05em;
+    color: #ADADAD;
+
+    @media (min-width: $tablet) {
+        margin-top: 12px;
+
+        font-size: 15px;
+        line-height: 19px;
+    }
+}

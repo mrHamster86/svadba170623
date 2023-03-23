@@ -4,6 +4,8 @@ import { Promo } from '@/components/Promo/Promo';
 import { Menu } from '@/components/Menu/Menu';
 import { Invite } from '@/components/Invite/Invite';
 import { TextWithGalleryProps, TextWithGallery } from '@/components/TextWithGallery/TextWithGallery';
+import { HappyMoments } from '@/components/HappyMoments/HappyMoments';
+import { Form } from '@/components/Form/Form';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -89,6 +91,8 @@ export default function Home() {
           flexDirection='row-reverse'
           {...banquet}
         />
+        <HappyMoments/>
+        <Form/>
       </main>
       <Footer />
     </>

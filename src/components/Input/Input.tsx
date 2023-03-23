@@ -24,7 +24,7 @@ export const Input = ({
 }: InputProps) => {
     return (
         <div className={style.input}>
-            <label htmlFor={id}>{label}</label>
+            <label htmlFor={id} className="visually-hidden">{label}</label>
             <input
                 type="text"
                 id={id}
@@ -36,7 +36,7 @@ export const Input = ({
                 onBlur={onBlur}
             />
             {description && (
-                <span>{description}</span>
+                <span className={style.description}>{description}</span>
             )}
         </div>
     );

@@ -1,0 +1,27 @@
+@import "@/styles/veriabless.scss";
+
+.happyMoments {
+    height: 340px;
+
+    background-color: #000000;
+    background-image: url('/img/svg-gallery-2_mobile.png');
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 145px auto;
+
+    @media (min-width: $tablet) {
+        height: 525px;
+
+        background-image: url('/img/svg-gallery-1_tablet.png'), url('/img/svg-gallery-2_tablet.png');
+        background-position: left 10px, right top;
+        background-size: 181px auto, 283px auto;
+    }
+
+    @media (min-width: $desktop) {
+        height: 850px;
+
+        background-image: url('/img/svg-gallery-1_desktop.png'), url('/img/svg-gallery-2_desktop.png');
+        background-position: left top, right top;
+        background-size: 260px auto, 412px auto;
+    }
+}

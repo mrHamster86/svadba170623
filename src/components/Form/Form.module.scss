@@ -1,1 +1,78 @@
-.form {}
+@import "@/styles/veriabless.scss";
+
+.block {
+    padding: 40px 0 60px;
+
+    @media (min-width: $tablet) {
+        padding: 70px 0 50px;
+
+        background-image: url('/img/form-1_tablet.png');
+        background-repeat: no-repeat;
+        background-position: left bottom;
+        background-size: 285px auto;
+    }
+
+    @media (min-width: $desktop) {
+        padding: 140px 0 170px;
+
+        background-image: url('/img/form-1_desktop.png'), url('/img/form-2_desktop.png');
+        background-repeat: no-repeat;
+        background-position: left bottom, right 137px;
+        background-size: 604px auto, 186px auto;
+    }
+}
+
+.wrapper {
+    @include wrapper;
+
+    @media (min-width: $tablet) {
+        display: flex;
+        gap: 17px;
+    }
+
+    @media (min-width: $desktop) {
+        gap: 20px;
+    }
+}
+
+.titleBlock {
+    @media (min-width: $tablet) {
+        flex-shrink: 0;
+        width: 250px;
+    }
+
+    @media (min-width: $desktop) {
+        width: 505px;
+    }
+}
+
+.title {
+    margin: 0 0 40px;
+
+    font-family: $Times;
+    font-size: 30px;
+    line-height: 34px;
+
+    @media (min-width: $desktop) {
+        font-size: 50px;
+        line-height: 57px;
+    }
+}
+
+.form {
+    flex-grow: 1;
+    max-width: 610px;
+}
+
+.button {
+    @include btn;
+    width: 100%;
+}
+
+* + .button {
+    margin-top: 20px;
+
+    @media (min-width: $desktop) {
+        margin-top: 30px;
+    }
+}
