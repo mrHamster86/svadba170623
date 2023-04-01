@@ -70,20 +70,16 @@
     &:hover,
     &:focus,
     &:active {
-        color: #D47A7A;
+        color: #2C90D8;
 
         &::before {
-            border-color: #D47A7A;
+            border-color: #2C90D8;
         }
     }
 
     &:active {
         .icon {
             color: #ffffff;
-        }
-
-        &::before {
-            background-color: #D47A7A;
         }
     }
 

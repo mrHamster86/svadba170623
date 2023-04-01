@@ -19,6 +19,9 @@ $padding-desktop: 0 101px;
 //wrapper
 $wrapper-desktop: 1440px;
 
+//gallery
+$ig-blue: #2C90D8;
+
 //mixins
 @mixin wrapper {
     padding: $padding-mobile;
@@ -48,7 +51,8 @@ $wrapper-desktop: 1440px;
 
 @mixin link-reset {
     text-decoration: none;
-    color: #D47A7A;
+    color: #2C90D8;
+    transition: color 0.3s;
 
     &:hover,
     &:active {
@@ -78,9 +82,12 @@ $wrapper-desktop: 1440px;
     }
 
     &:hover,
-    &:active,
+    &:active {
+        border-color: #000000;
+    }
+
     &:focus {
-        border-color: #D47A7A;
+        border-color: #2C90D8;
     }
 
     @media (min-width: $tablet) {
@@ -122,6 +129,12 @@ $wrapper-desktop: 1440px;
     &:active {
         color: #D47A7A;
         border-color: #D47A7A;
+    }
+
+    &:disabled {
+        background-color: transparent;
+        color: #2C90D8;
+        border-color: #2C90D8;
     }
 
     @media (min-width: $tablet) {

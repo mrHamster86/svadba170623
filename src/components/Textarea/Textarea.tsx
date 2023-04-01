@@ -19,7 +19,6 @@ export const Textarea = ({
     description,
     required,
     rows = 2,
-    ref,
     onChange,
     onBlur,
 }: TextareaProps) => {
@@ -32,7 +31,6 @@ export const Textarea = ({
                 placeholder={placeholder}
                 required={required}
                 rows={rows}
-                ref={ref}
                 onChange={onChange}
                 onBlur={onBlur}
             />

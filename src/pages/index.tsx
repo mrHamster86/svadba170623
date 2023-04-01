@@ -20,19 +20,19 @@ const registration: TextWithGalleryProps = {
   comment: 'После регистрации вы&nbsp;отправитесь в&nbsp;банкетный зал, где вас будет ждать приветственный фуршет.',
   gallery: [
     {
-      x1: 'img/gallery/zags-1.jpg',
+      original: 'img/gallery/zags-1.jpg',
       x2: 'img/gallery/zags-1@2x.jpg',
       x1webp: 'img/gallery/zags-1.webp',
       x2webp: 'img/gallery/zags-1@2x.webp',
     },
     {
-      x1: 'img/gallery/zags-2.jpg',
+      original: 'img/gallery/zags-2.jpg',
       x2: 'img/gallery/zags-2@2x.jpg',
       x1webp: 'img/gallery/zags-2.webp',
       x2webp: 'img/gallery/zags-2@2x.webp',
     },
     {
-      x1: 'img/gallery/zags-3.jpg',
+      original: 'img/gallery/zags-3.jpg',
       x2: 'img/gallery/zags-3@2x.jpg',
       x1webp: 'img/gallery/zags-3.webp',
       x2webp: 'img/gallery/zags-3@2x.webp',
@@ -50,28 +50,28 @@ const banquet: TextWithGalleryProps = {
   },
   gallery: [
     {
-      x1: 'img/gallery/forself-1.jpg',
+      original: 'img/gallery/forself-1.jpg',
       x2: 'img/gallery/forself-1@2x.jpg',
       x1webp: 'img/gallery/forself-1.webp',
       x2webp: 'img/gallery/forself-1@2x.webp',
     },
     {
-      x1: 'img/gallery/forself-2.jpg',
+      original: 'img/gallery/forself-2.jpg',
       x2: 'img/gallery/zags-2@2x.jpg',
       x1webp: 'img/gallery/forself-2.webp',
       x2webp: 'img/gallery/forself-2@2x.webp',
     },
     {
-      x1: 'img/gallery/forself-3.jpg',
+      original: 'img/gallery/forself-3.jpg',
       x2: 'img/gallery/forself-3@2x.jpg',
       x1webp: 'img/gallery/forself-3.webp',
       x2webp: 'img/gallery/forself-3@2x.webp',
     },
     {
-      x1: 'img/gallery/forself-4.jpg',
+      original: 'img/gallery/forself-4.jpg',
       x2: 'img/gallery/forself-4@2x.jpg',
       x1webp: 'img/gallery/forself-4.webp',
-      x2webp: 'img/gallery/forself-5@2x.webp',
+      x2webp: 'img/gallery/forself-4@2x.webp',
     },
   ],
 }

@@ -23,7 +23,7 @@
     @media (min-width: $desktop) {
         background-image: url('/img/promo-flowers-left_descktop.png'), url('/img/promo-flowers-right_descktop.png');
         background-repeat: no-repeat;
-        background-position: left 237px, right bottom;
+        background-position: left bottom, right bottom;
         background-size: auto 588px, auto 566px;
     }
 }
