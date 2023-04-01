@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 
 import { Input } from '@/components/Input/Input';
@@ -15,6 +16,7 @@ type FormData = {
 };
 
 export const Form = () => {
+  const [editForm, setEditForm] = useState(true);
   const { control, handleSubmit } = useForm<FormData>({
     defaultValues: {
       name: '',
@@ -32,17 +34,24 @@ export const Form = () => {
         'Content-Type': 'application/json;charset=utf-8'
       },
       body: JSON.stringify(data),
-    });
+    }).then(() => setEditForm(false));
+  };
+
+  const hanlerChange = () => {
+    if (!editForm) {
+      setEditForm(true);
+    }
   };
 
   return (
-    <div className={styles.block}>
+    <div id='feedback' className={styles.block}>
       <div className={styles.wrapper}>
         <div className={styles.titleBlock}>
           <h2 className={styles.title} dangerouslySetInnerHTML={{ __html: 'Готовы&nbsp;радоваться вместе&nbsp;с&nbsp;нами?' }} />
         </div>
         <form
           onSubmit={handleSubmit(onSubmit)}
+          onChange={hanlerChange}
           className={styles.form}
         >
           <Controller
@@ -64,10 +73,12 @@ export const Form = () => {
             control={control}
             render={({ field }) => (
               <Input
+                required
                 id="phone"
                 label="Номер телефона"
                 placeholder="Номер телефона для связи"
-                required
+                mask="+7 (999) 999-99-99"
+                pattern="\+7 \([0-9]{3}\) [0-9]{3}-[0-9]{2}-[0-9]{2}"
                 {...field}
               />
             )}
@@ -107,7 +118,7 @@ export const Form = () => {
               />
             )}
           />
-          <button type="submit" className={styles.button}>Отправить</button>
+          <button type="submit" className={styles.button} disabled={!editForm}>{editForm ? 'Отправить' : 'Успешно отправлено'}</button>
         </form>
       </div>
     </div>

@@ -1,42 +1,52 @@
-import { ChangeEventHandler, FocusEventHandler, LegacyRef } from 'react';
-import { ControllerRenderProps, FieldValues, Path } from 'react-hook-form';
+import { ControllerRenderProps } from 'react-hook-form';
+import InputMask from 'react-input-mask';
 
 import style from './Input.module.scss';
 
-interface InputProps extends ControllerRenderProps {
+type InputProps = ControllerRenderProps & {
     id: string;
     label: string;
     placeholder?: string;
     description?: string;
     required?: boolean;
-}
+    mask?: string | (string | RegExp)[];
+    maskChar?: string | null | undefined;
+    pattern?: string;
+};
 
-export const Input = ({
-    id,
-    name,
-    label,
-    placeholder = '',
-    description,
-    required,
-    ref,
-    onChange,
-    onBlur,
-}: InputProps) => {
+export const Input = (props: InputProps) => {
+    const {
+        id,
+        name,
+        label,
+        value,
+        placeholder = '',
+        description,
+        required,
+        mask = '',
+        maskChar = null,
+        pattern,
+        onChange,
+        onBlur,
+    } = props;
     return (
         <div className={style.input}>
             <label htmlFor={id} className="visually-hidden">{label}</label>
-            <input
+            <InputMask
                 type="text"
                 id={id}
                 name={name}
                 placeholder={placeholder}
                 required={required}
-                ref={ref}
+                value={value}
+                mask={mask}
+                pattern={pattern}
+                maskChar={maskChar}
                 onChange={onChange}
                 onBlur={onBlur}
             />
             {description && (
-                <span className={style.description}>{description}</span>
+                <span className={style.des}>{description}</span>
             )}
         </div>
     );

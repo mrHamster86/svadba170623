@@ -13,7 +13,6 @@ export const Checkbox = ({
     id,
     label,
     name,
-    ref,
     onChange,
     onBlur,
 }: CheckboxProps) => {
@@ -24,7 +23,6 @@ export const Checkbox = ({
                 type="checkbox"
                 className="visually-hidden"
                 name={name}
-                ref={ref}
                 onChange={onChange}
                 onBlur={onBlur}
             />

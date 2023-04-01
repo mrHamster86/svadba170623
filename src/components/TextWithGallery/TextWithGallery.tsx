@@ -1,4 +1,7 @@
+import ImageGallery, { ReactImageGalleryItem } from 'react-image-gallery';
 import style from './TextWithGallery.module.scss';
+
+type GalleryItem = { x2: string; x1webp: string; x2webp: string; } & ReactImageGalleryItem;
 
 export type TextWithGalleryProps = {
     id: string;
@@ -9,9 +12,20 @@ export type TextWithGalleryProps = {
         label: string;
     };
     comment?: string;
-    gallery: { x1: string; x2: string; x1webp: string; x2webp: string; }[];
+    gallery: GalleryItem[];
     flexDirection?: 'row' | 'row-reverse';
 }
+
+const renderItem = ({ original, x2, x1webp, x2webp }: GalleryItem) => {
+    return (
+        <div key={original} className={style.imgWrapper}>
+            <picture>
+                <source srcSet={`${x1webp} 1x, ${x2webp} 2x`} />
+                <img className={style.img} src={original} srcSet={`${x2} 2x`} width="610" height="500" />
+            </picture>
+        </div>
+    );
+};
 
 export const TextWithGallery = ({
     id,
@@ -31,14 +45,14 @@ export const TextWithGallery = ({
                 {comment && (<p className={style.comment} dangerouslySetInnerHTML={{ __html: comment }} />)}
             </div>
             <div className={style.gallery}>
-                {gallery.map(({ x1, x2, x1webp, x2webp }) => (
-                    <div key={x1} className={style.imgWrapper}>
-                        <picture>
-                            <source srcSet={`${x1webp} 1x, ${x2webp} 2x`} />
-                            <img className={style.img} src={x1} srcSet={`${x2} 2x`} width="610" height="500" />
-                        </picture>
-                    </div>
-                ))}
+                <ImageGallery
+                    showPlayButton={false}
+                    showFullscreenButton={false}
+                    showBullets
+                    items={gallery}
+                    //@ts-ignore
+                    renderItem={renderItem}
+                />
             </div>
         </section>
     );
