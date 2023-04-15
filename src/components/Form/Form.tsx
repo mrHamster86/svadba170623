@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 
 import { Input } from '@/components/Input/Input';
@@ -6,10 +6,12 @@ import { Checkbox } from '@/components/Checkbox/Checkbox';
 import { Textarea } from '@/components/Textarea/Textarea';
 
 import styles from './Form.module.scss';
+import { useTimer } from 'use-timer';
 
 type FormData = {
   name: string;
   phone: string;
+  email: string;
   zags: boolean;
   banket: boolean;
   questions: string;
@@ -17,10 +19,12 @@ type FormData = {
 
 export const Form = () => {
   const [editForm, setEditForm] = useState(true);
+  const { time, start, pause } = useTimer();
   const { control, handleSubmit } = useForm<FormData>({
     defaultValues: {
       name: '',
       phone: '',
+      email: '',
       zags: false,
       banket: false,
       questions: '',
@@ -28,6 +32,11 @@ export const Form = () => {
   });
 
   const onSubmit = async (data: FormData) => {
+    if (time < 2 || data.email) {
+      pause();
+      return;
+    }
+  
     const req = await fetch('/api/form', {
       method: 'POST',
       headers: {
@@ -38,6 +47,10 @@ export const Form = () => {
   };
 
   const hanlerChange = () => {
+    if (!time) {
+      start();
+    }
+
     if (!editForm) {
       setEditForm(true);
     }
@@ -79,6 +92,19 @@ export const Form = () => {
                 placeholder="Номер телефона для связи"
                 mask="+7 (999) 999-99-99"
                 pattern="\+7 \([0-9]{3}\) [0-9]{3}-[0-9]{2}-[0-9]{2}"
+                {...field}
+              />
+            )}
+          />
+          <Controller
+            name="email"
+            control={control}
+            render={({ field }) => (
+              <Input
+                hidden
+                id="email"
+                label="Email"
+                placeholder="Адресс электронной почты"
                 {...field}
               />
             )}

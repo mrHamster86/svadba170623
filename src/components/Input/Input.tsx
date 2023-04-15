@@ -6,6 +6,7 @@ import style from './Input.module.scss';
 type InputProps = ControllerRenderProps & {
     id: string;
     label: string;
+    hidden?: boolean;
     placeholder?: string;
     description?: string;
     required?: boolean;
@@ -23,14 +24,17 @@ export const Input = (props: InputProps) => {
         placeholder = '',
         description,
         required,
+        hidden,
         mask = '',
         maskChar = null,
         pattern,
         onChange,
         onBlur,
     } = props;
+    const classNames = [style.input, hidden ? 'visually-hidden' : ''];
+
     return (
-        <div className={style.input}>
+        <div className={classNames.join(' ')}>
             <label htmlFor={id} className="visually-hidden">{label}</label>
             <InputMask
                 type="text"
